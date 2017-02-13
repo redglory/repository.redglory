@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.redglory" version="1.0.0" name="redglory's Kodi repository" provider-name="redglory">
+	<extension point="xbmc.addon.repository" name="redglory's Kodi repository">
+		<info compressed="false">https://raw.githubusercontent.com/redglory/repository.redglory/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/redglory/repository.redglory/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/redglory/repository.redglory/master/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">redglory's addons repository</summary>
+		<summary lang="pt">Repositório de addons de redglory</summary>
+		<description  lang="en">Download and install most up-to-date redglory's repository addons</summary>
+		<description  lang="pt">Descarregue e instale as versões mais atualizadas de addons do repositório do redglory</summary>
+		<platform>all</platform>
+		<assets>
+ 			   <icon>icon.png</icon>
+ 			   <fanart>fanart.jpg</fanart>
+		</assets>
+	</extension>
+</addon>
