@@ -8,8 +8,8 @@
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">redglory's addons repository</summary>
 		<summary lang="pt">Repositório de addons de redglory</summary>
-		<description  lang="en">Download and install most up-to-date redglory's repository addons</summary>
-		<description  lang="pt">Descarregue e instale as versões mais atualizadas de addons do repositório do redglory</summary>
+		<description lang="en">Download and install most up-to-date redglory's repository addons</summary>
+		<description lang="pt">Descarregue e instale as versões mais atualizadas de addons do repositório do redglory</summary>
 		<platform>all</platform>
 		<assets>
  			   <icon>icon.png</icon>
