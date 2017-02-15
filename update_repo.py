@@ -70,11 +70,13 @@ import time
 from traceback import format_exc
 import subprocess
 
+
 AddonMetadata = collections.namedtuple(
     'AddonMetadata', ('id', 'version', 'root'))
 WorkerResult = collections.namedtuple(
     'WorkerResult', ('addon_metadata', 'exc_info'))
 AddonWorker = collections.namedtuple('AddonWorker', ('thread', 'result_slot'))
+
 
 INFO_BASENAME = 'addon.xml'
 METADATA_BASENAMES = (
@@ -82,8 +84,10 @@ METADATA_BASENAMES = (
     'icon.png',
     'fanart.jpg')
 
+
 def get_archive_basename(addon_metadata):
     return '{}-{}.zip'.format(addon_metadata.id, addon_metadata.version)
+
 
 def get_metadata_basenames(addon_metadata):
     return ([(basename, basename) for basename in METADATA_BASENAMES] +
@@ -91,8 +95,10 @@ def get_metadata_basenames(addon_metadata):
                 'changelog.txt',
                 'changelog-{}.txt'.format(addon_metadata.version))])
 
+
 def is_url(addon_location):
     return bool(re.match('[A-Za-z0-9+.-]+://.', addon_location))
+
 
 def parse_metadata(metadata_file):
     # Parse the addon.xml metadata.
@@ -112,6 +118,7 @@ def parse_metadata(metadata_file):
             'Invalid addon verson: ' + str(addon_metadata.version))
     return addon_metadata
 
+
 def copy_metadata_files(source_folder, addon_target_folder, addon_metadata):
     for (source_basename, target_basename) in get_metadata_basenames(
             addon_metadata):
@@ -120,6 +127,7 @@ def copy_metadata_files(source_folder, addon_target_folder, addon_metadata):
             shutil.copyfile(
                 source_path,
                 os.path.join(addon_target_folder, target_basename))
+
 
 def fetch_addon_from_git(addon_location, target_folder, temp_folder):
     alt_addonid = ""
@@ -174,6 +182,7 @@ def fetch_addon_from_git(addon_location, target_folder, temp_folder):
     addon_metadata = fetch_addon_from_folder(addon_temp, target_folder)
     
     return addon_metadata
+
    
 def fetch_addon_from_folder(raw_addon_location, target_folder):
     try:
@@ -187,7 +196,7 @@ def fetch_addon_from_folder(raw_addon_location, target_folder):
         if os.path.exists(cur_metadata_path):
             cur_metadata = parse_metadata(cur_metadata_path)
             if cur_metadata.version == addon_metadata.version:
-                print "Addon %s already has version %s on the repo, skipping..." % (addon_metadata.id, addon_metadata.version)
+                print "Addon %s already has version %s on the repo, skipping...\n" % (addon_metadata.id, addon_metadata.version)
                 return cur_metadata
         
         #if skin addon, build textures...
@@ -300,11 +309,11 @@ def do_unzip(zip_path, targetdir):
             shutil.copyfileobj(zip_file.open(fileinfo.filename), outputfile)
             outputfile.close()
     zip_file.close()
-    print "UNZIP DONE of file %s" %(zip_path)
+    print "UNZIP DONE of file %s\n" %(zip_path)
     
 def fetch_addon(addon_location, target_folder, result_slot, temp_folder):
     try:
-        print "Processing %s" %addon_location
+        print "Processing %s\n" % addon_location
         if is_url(addon_location):
             addon_metadata = fetch_addon_from_git(
                 addon_location, target_folder, temp_folder)
@@ -320,6 +329,7 @@ def fetch_addon(addon_location, target_folder, result_slot, temp_folder):
     except:
         result_slot.append(WorkerResult(None, sys.exc_info()))
 
+
 def get_addon_worker(addon_location, target_folder, temp_folder):
     result_slot = []
     thread = threading.Thread(target=lambda: fetch_addon(
@@ -328,13 +338,13 @@ def get_addon_worker(addon_location, target_folder, temp_folder):
 
 def cleanup_dir(dirname):
     #cleanup directory from disk
-    #cmdargs = '/c rd /s /q %s' % dirname
-    #subprocess.Popen( ('cmd', cmdargs )).wait()
-    shutil.rmtree(dirname, ignore_errors=False)
+    cmdargs = '/c rd /s /q %s' % dirname
+    subprocess.Popen( ('cmd', cmdargs )).wait()
     while os.path.isdir(dirname):
-        print "wait for folder deletion"
+        print "wait for folder deletion\n"
         time.sleep(1)
 
+    
 def create_repository(
         addon_locations,
         target_folder,
@@ -358,8 +368,7 @@ def create_repository(
     #data_path = os.path.abspath(args.datadir)
    
     temp_folder = os.path.abspath(os.path.join(target_folder, "temp"))
-    if os.path.isdir(temp_folder):
-      cleanup_dir(temp_folder)
+    cleanup_dir(temp_folder)
     if not os.path.isdir(temp_folder):
         os.makedirs(temp_folder)
 
@@ -405,8 +414,7 @@ def create_repository(
         sig.write(digest)
         
     #cleanup temp files
-    if os.path.isdir(temp_folder):
-      cleanup_dir(temp_folder)
+    cleanup_dir(temp_folder)
 
 def main():
     parser = argparse.ArgumentParser(
