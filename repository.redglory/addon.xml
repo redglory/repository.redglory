@@ -15,5 +15,9 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
+		<news>
+			- Fixed update_repo.py cleanup_dir method
+			- pushed repository.redglory version to 1.0.1
+		</news>
 	</extension>
 </addon>
