@@ -1,1 +1,2 @@
 https://github.com/redglory/script.artworkorganizer#master
+https://github.com/redglory/script.skin.helper.widgets#master

@@ -70,6 +70,13 @@ import time
 from traceback import format_exc
 import subprocess
 
+if sys.platform == "win32"
+    try:
+        from win32 import win32api, win32con
+        WIN32 = True
+    except:
+        print "unable to import win32api & win32con"
+
 
 AddonMetadata = collections.namedtuple(
     'AddonMetadata', ('id', 'version', 'root'))
@@ -337,13 +344,22 @@ def get_addon_worker(addon_location, target_folder, temp_folder):
     return AddonWorker(thread, result_slot)
 
 def cleanup_dir(dirname):
-    #cleanup directory from disk
-    cmdargs = '/c rd /s /q %s' % dirname
-    subprocess.Popen( ('cmd', cmdargs )).wait()
-    while os.path.isdir(dirname):
-        print "wait for folder deletion\n"
-        time.sleep(1)
-
+    # make sure dirname exists...
+    if os.path.exists(dirname):
+        retry = True
+        while retry:
+            retry = False
+            try:
+                shutil.rmtree(dirname)
+            except exceptions.WindowsError, e:
+                if e.winerror == 5: # No write permission
+                    if WIN32: #win32 libraries are imported
+                        win32api.SetFileAttributes(dirname, win32con.FILE_ATTRIBUTE_NORMAL)
+                        retry = True
+                    else: # notify user
+                        print "Windows: No write permission"
+    else:
+        print "%s was already cleaned up" % dirname
     
 def create_repository(
         addon_locations,
