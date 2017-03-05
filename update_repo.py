@@ -70,7 +70,7 @@ import time
 from traceback import format_exc
 import subprocess
 
-if sys.platform == "win32"
+if sys.platform == "win32":
     try:
         from win32 import win32api, win32con
         WIN32 = True
