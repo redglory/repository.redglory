@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.arenavisionezy" name="ArenaVision EZY" version="1.3.0" provider-name="Wazzu, redglory">
+<addon id="plugin.video.arenavisionezy" name="ArenaVision EZY" version="1.3.1" provider-name="Wazzu, redglory">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="program.plexus" />
@@ -10,12 +10,12 @@
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Stream from ArenaVision</summary>
 		<summary lang="pt">Transmitir a partir de ArenaVision</summary>
-		<description>Interfaz para ArenaVision</description>
+		<description>Interface para ArenaVision</description>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE Version 2</license>
 		<forum/>
 		<website/>
-		<email>egrueda@gmail.com</email>
+		<email>pedropinto.inbox@gmail.com</email>
 		<source>https://github.com/redglory/plugin.video.arenavisionezy</source>
 	</extension>
 </addon>
