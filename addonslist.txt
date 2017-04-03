@@ -1,2 +1,3 @@
 https://github.com/redglory/script.artworkorganizer#master
 https://github.com/redglory/script.skin.helper.widgets#master
+https://github.com/redglory/plugin.video.arenavisionezy#master
