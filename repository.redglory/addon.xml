@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="repository.redglory" version="1.0.4" name="redglory's Kodi repository" provider-name="redglory">
 	<extension point="xbmc.addon.repository" name="redglory's Kodi repository">
-		<info compressed="false">https://raw.githubusercontent.com/redglory/repository.redglory/master/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/redglory/repository.redglory/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/redglory/repository.redglory/master/</datadir>
+		<info compressed="false">https://raw.githubusercontent.com/redglory/repository.redglory/matrix/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/redglory/repository.redglory/matrix/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/redglory/repository.redglory/martix/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">redglory's addons repository</summary>
