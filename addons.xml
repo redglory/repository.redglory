@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <addons><addon id="repository.redglory" name="redglory's Kodi repository" provider-name="redglory" version="1.0.4">
 	<extension name="redglory's Kodi repository" point="xbmc.addon.repository">
-		<info compressed="false">https://raw.githubusercontent.com/redglory/repository.redglory/matrix/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/redglory/repository.redglory/matrix/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/redglory/repository.redglory/martix/</datadir>
+		<info compressed="false">https://raw.githubusercontent.com/redglory/repository.redglory/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/redglory/repository.redglory/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/redglory/repository.redglory/master/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">redglory's addons repository</summary>
@@ -111,4 +111,20 @@
 		<website />
 		<source>https://github.com/marcelveldt/script.skin.helper.widgets</source>
 	</extension>
+</addon><addon id="script.module.thetvdb" name="The TVDB API v2" provider-name="marcelveldt" version="1.0.26">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0" />
+        <import addon="script.module.requests" version="2.3.0" />
+        <import addon="script.module.simplejson" version="3.3.0" />
+        <import addon="script.module.simplecache" version="1.0.0" />
+        <import addon="script.module.arrow" version="0.6.0" />
+    </requires>
+    <extension library="lib" point="xbmc.python.module" />
+    <extension point="xbmc.addon.metadata">
+        <summary>TheTVDB API v2 python module for Kodi</summary>
+        <description>TheTVDB API v2 python module for Kodi</description>
+        <license>Apache 2.0</license>
+        <source>https://github.com/marcelveldt/script.module.thetvdb</source>
+        <platform>all</platform>
+    </extension>
 </addon></addons>
