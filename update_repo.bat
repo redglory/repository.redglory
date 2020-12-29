@@ -5,6 +5,6 @@ SET "COMMIT=repo updated on %UPDATED_ON%"
 
 git add .
 git commit -am "%COMMIT%"
-git push
+git push -f
 
 pause
