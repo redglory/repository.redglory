@@ -1,3 +1,1 @@
-https://github.com/redglory/script.artworkorganizer#master
-https://github.com/redglory/script.skin.helper.widgets#master
-https://github.com/redglory/script.module.thetvdb#master
+https://github.com/redglory/script.artworkorganizer#matrix
