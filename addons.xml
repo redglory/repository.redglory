@@ -19,9 +19,9 @@
 			Redesigned icon and fanart
 		</news>
 	</extension>
-</addon><addon id="script.artworkorganizer" name="Artwork Organizer" provider-name="ronie, redglory" version="6.1.1">
+</addon><addon id="script.artworkorganizer" name="Artwork Organizer" provider-name="ronie, redglory" version="6.0.4">
     <requires>
-        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="xbmc.python" version="2.25.0" />
     </requires>
     <extension library="default.py" point="xbmc.python.script">
         <provides>executable</provides>
