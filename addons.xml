@@ -19,7 +19,7 @@
 			Redesigned icon and fanart
 		</news>
 	</extension>
-</addon><addon id="script.artworkorganizer" name="Artwork Organizer" provider-name="ronie, redglory" version="6.1.0">
+</addon><addon id="script.artworkorganizer" name="Artwork Organizer" provider-name="ronie, redglory" version="6.1.1">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
